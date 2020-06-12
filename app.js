@@ -1,7 +1,7 @@
 // Requiring packages
 const express = require("express"),
 	  app = express(),
-	  bodyParser = express("body-parser"),
+	  bodyParser = require("body-parser"),
 	  mongoose = require("mongoose"),
 	  methodOverride = require("method-override");
 
