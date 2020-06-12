@@ -2,7 +2,7 @@
 const express = require("express"),
 	  app = express(),
 	  bodyParser = express("body-parser"),
-	  mongoose = require("mongoose")
+	  mongoose = require("mongoose"),
 	  methodOverride = require("method-override");
 
 // Database config
