@@ -24,7 +24,7 @@ app.use(methodOverride('_method'));
 
 // routes
 app.get("/", (req, res)=>{
-	res.render("home")
+	res.render("index")
 })
 
 // sever setup
