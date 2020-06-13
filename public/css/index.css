@@ -88,9 +88,12 @@
     margin-bottom: 60px;
 }
 
-#top-course span{
-    padding: 16px;
-    
+
+#blog h2{
+	font-size: 3.0em;
+    border-bottom: 5px solid #7b1798;
+    padding-bottom: 16px;
+    margin-bottom: 60px;
 }
 
 #mentor img{
