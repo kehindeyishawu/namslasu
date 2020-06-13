@@ -28,6 +28,6 @@ app.get("/", (req, res)=>{
 })
 
 // sever setup
-app.listen(process.env.PORT, (req, res)=>{
+app.listen(process.env.PORT || 3000, (req, res)=>{
 	console.log("server is running on port 3000")
 })
