@@ -22,9 +22,20 @@ app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride('_method'));
 
+
+// // requiring routes
+// const routes = require("./routes/index.js");
+
+// // using routes
+// app.use(routes)
+
+
 // routes
 app.get("/", (req, res)=>{
 	res.render("index")
+})
+app.get("/login", (req, res)=>{
+	res.render("sample")
 })
 
 // sever setup
