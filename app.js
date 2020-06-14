@@ -23,20 +23,9 @@ app.use(express.static(__dirname + "/public"));
 app.use(methodOverride('_method'));
 
 
-// // requiring routes
-// const routes = require("./routes/index.js");
-
-// // using routes
-// app.use(routes)
-
-
-// routes
-app.get("/", (req, res)=>{
-	res.render("index")
-})
-app.get("/login", (req, res)=>{
-	res.render("sample")
-})
+// requiring and using routes
+const routes = require("./routes/index.js");
+app.use(routes)
 
 // sever setup
 app.listen(process.env.PORT || 3000, (req, res)=>{

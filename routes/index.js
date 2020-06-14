@@ -1,15 +1,13 @@
-const  express = require("express"),
+const express = require("express"),
 	  router = express.Router();
 
+
+router.get("/template", (req, res)=>{
+	res.render("template")
+})
+
 router.get("/", (req, res)=>{
-	res.render("index")
+	res. render("index")
 })
 
-
-router.get("/login", (req, res)=>{
-	res.render("sample")
-})
-
-
-
-module.exports=router;
+module.exports = router;
