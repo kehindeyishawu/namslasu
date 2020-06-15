@@ -19,7 +19,7 @@ router.get("/fresher", (req, res)=>{
 			return
 		}
 		
-		res.render("courses/fresher/index", {course:courses})
+		res.render("courses/fresher/index", {course:courses, level:"100"})
 	})
 	
 })
@@ -32,7 +32,7 @@ router.get("/sop", (req, res)=>{
 			return
 		}
 		
-		res.render("courses/fresher/index", {course:courses})
+		res.render("courses/fresher/index", {course:courses, level:"200"})
 	})
 	
 })
@@ -45,7 +45,7 @@ router.get("/junior", (req, res)=>{
 			return
 		}
 		
-		res.render("courses/fresher/index", {course:courses})
+		res.render("courses/fresher/index", {course:courses, level:"300"})
 	})
 	
 })
@@ -58,7 +58,7 @@ router.get("/senior", (req, res)=>{
 			return
 		}
 		
-		res.render("courses/fresher/index", {course:courses})
+		res.render("courses/fresher/index", {course:courses, level:"400"})
 	})
 	
 })

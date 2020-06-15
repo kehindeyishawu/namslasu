@@ -21,14 +21,14 @@
 			<nav class="navbar navbar-expand-md navbar-light bg-white border-bottom shadow-sm sticky-top">
                 <div class="container-fluid">
                     <!-- ppppppppppppppppppppp -->
-                    <a href="" class="navbar-brand"><img src="/assets/Namslogo.jpg" alt="logo"> NAMS-LASU </a>
+                    <a href="/" class="navbar-brand"><img src="/assets/Namslogo.jpg" alt="logo"> NAMS-LASU </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarResponsive">
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item active">
-                                <a href="#" class="nav-link">Home</a>
+                                <a href="/" class="nav-link">Home</a>
                             </li>
                             <li class="nav-item">
                                 <a href="#" class="nav-link">About</a>
@@ -69,7 +69,7 @@
         <div class="container">
                 <div class="jumbotron mt-5">
                     <div class="container">
-                            <h1 class="display-4">100L Courses</h1>
+                            <h1 class="display-4"><%=level%>L Courses</h1>
                             <p class="" style="font-size: 18px;">Select your course. The Site will try to stay up to date with this courses</p>
                              <!-- for when user is logged in -->
                                 <a class="btn btn-info text-white" href="/fresher/new">Create New Post</a>
@@ -85,6 +85,9 @@
     <p class="card-text"><%= e.title %></p>
     <a href="#" class="card-link">Files</a>
     <a href="#" class="card-link">Past Questions</a>
+	<form class="form-inline float-right">
+		<button href="#" class="btn btn-sm pb-0 btn-outline-danger"><i class="far fa-heart"></i> 1</button>
+	</form>    
   </div>
 </div>
                         </div>   
@@ -94,6 +97,31 @@
                     
                 </div>
         </div>
+		
+		<section class="comment space-sm">
+			<div class="container">
+				<h2>
+					Comment
+				</h2>
+				<form class="form-group">
+					<textarea class="form-control" rows="6"></textarea>
+				</form>
+				<button class="btn btn-info rounded-pill">
+					Post Comment
+				</button>
+			</div>
+		</section>
+		
+		<footer id="footer-straight" class="mt-5 py-3">
+			<div class="container">
+				<p class="border-bottom">Courtesy of The Executives 2019/2020 Academic Session</p>
+				<small>
+					Nigeria Association of Microbiology Students - Lagos State University © 2020 namlasu.com - All rights reserved.
+				</small> <br>
+				<span>Website Crafted By Kehinde Yishawu</span>
+			</div>
+		</footer>
+		
 	</div>
 
     <!-- <script src="./public/js/main.js"></script> -->

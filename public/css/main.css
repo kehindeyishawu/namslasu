@@ -26,6 +26,11 @@ html body{
     margin-bottom: 170px;
 }
 
+.space-sm{
+	margin-top: 100px;
+    margin-bottom: 100px;
+}
+
 .btn-info{
     background-image: linear-gradient(to right, #a517ba, #5f1782);
     padding: 8px 25px;
@@ -82,8 +87,8 @@ html body{
 
 /* hr{
     background-color: #fff;
-}
- */
+} */
+
 .copyright{
     margin-bottom: 0;
     padding-bottom: 20px; 
@@ -94,6 +99,13 @@ html body{
     background-image: linear-gradient(to right, #a517ba, #5f1782); 
     border-radius: 51% 62% 1% 1% / 10% 8% 1% 1% ;
     color: white;
+}
+
+#footer-straight{
+	background-image: linear-gradient(to right, #a517ba, #5f1782);
+	color: white;
+	margin-bottom: 0;
+    text-align: center;
 }
 
 .footer-box{
