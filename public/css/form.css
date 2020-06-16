@@ -1,0 +1,9 @@
+.form-size{
+	width: 50%;
+	margin: 10vh auto;
+	max-width:350px;
+}
+
+.form-size img{
+	width: 100px;
+}

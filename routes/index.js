@@ -63,5 +63,12 @@ router.get("/senior", (req, res)=>{
 	
 })
 
+router.get("/login", (req, res)=>{
+	res.render("login")
+})
+
+router.get("/signup", (req, res)=>{
+	res.render("newuser")
+})
 
 module.exports = router;
