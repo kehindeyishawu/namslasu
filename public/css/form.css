@@ -4,6 +4,12 @@
 	max-width:350px;
 }
 
+.form-size-lg{
+	width: 70%;
+	margin: 7vh auto;
+	max-width:550px;
+}
+
 .form-size img{
-	width: 100px;
+	width: 85px;
 }

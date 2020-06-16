@@ -68,7 +68,7 @@ router.get("/login", (req, res)=>{
 })
 
 router.get("/signup", (req, res)=>{
-	res.render("newuser")
+	res.render("usernew")
 })
 
 module.exports = router;

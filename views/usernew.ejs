@@ -13,6 +13,7 @@
     <!-- custom css -->
     <!-- ppppppppppppppppp -->
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/form.css">
 </head>
 <body>
 
@@ -66,52 +67,54 @@
                 </div>
             </div>
 		</section>
-        <div class="container">
-                <div class="jumbotron mt-5">
-                    <div class="container">
-                            <h1 class="display-4"><%=level%>L Courses</h1>
-                            <p class="" style="font-size: 18px;">Select your course. The Site will try to stay up to date with this courses</p>
-                             <!-- for when user is logged in -->
-                                <a class="btn btn-info text-white" href="#">Create New Post</a>
-                            <!-- ****************** -->
-                    </div>
-                </div>
-                <div class="row">
-                    <% course.forEach((e)=>{ %>
-						<div class="col-lg-4 col-sm-6 mb-3">
-                            <div class="card shadow-sm">
-  <div class="card-body">
-    <h5 class="card-title"><%= e.code %></h5>
-    <p class="card-text"><%= e.title %></p>
-    <a href="#" class="card-link">Files</a>
-    <a href="#" class="card-link">Past Questions</a>
-	<form class="form-inline float-right">
-		<button href="#" class="btn btn-sm pb-0 btn-outline-danger"><i class="far fa-heart"></i> 1</button>
-	</form>    
-  </div>
-</div>
-                        </div>   
-					<% }) %>
-					
-                         
-                    
-                </div>
-        </div>
 		
-		<section class="comment space-sm">
-			<div class="container">
-				<h2>
-					Comment
-				</h2>
-				<form class="form-group">
-					<textarea placeholder="Not functional yet" class="form-control" rows="6"></textarea>
-				</form>
-				<button class="btn btn-info rounded-pill">
-					Post Comment
-				</button>
-			</div>
-		</section>
+		<!-- forms create account -->
+		<div class="form-size-lg">
+			<h2 class="text-center">
+				Create New Account
+			</h2>
+			<form class="border p-3 shadow-sm rounded">
+			  <div class="form-row">
+				<div class="form-group col-md-6">
+				  <label for="firstname">First Name</label>
+				  <input type="text" class="form-control" id="firstname" placeholder="Sasuke">
+				</div>
+				<div class="form-group col-md-6">
+				  <label for="lastname">Last Name</label>
+				  <input type="text" class="form-control" id="lastname" placeholder="Uchiha">
+				</div>
+			  </div>
+			  <div class="form-group">
+				<label for="email">Email</label>
+				<input type="email" class="form-control" id="email" placeholder="sasuke@gmail.com">
+			  </div>
+			  <div class="form-row">
+				<div class="form-group col-md-6">
+					<label for="matric">Matric NO</label>
+					<input type="text" class="form-control" id="matric" placeholder="Place your matric number">
+			  	</div>
+				<div class="form-group col-md-6">
+					<label for="phone">Phone NO</label>
+					<input type="text" class="form-control" id="phone" placeholder="080 xxx xxxx ">
+			  	</div>
+			  </div>
+			  <div class="form-row">
+				<div class="form-group col-md-6">
+				  <label for="password">Password</label>
+				  <input type="password" class="form-control" id="password" placeholder="">
+				</div>
+				<div class="form-group col-md-6">
+				  <label for="confirmpassword">Confirm Password</label>
+				  <input type="confirmpassword" class="form-control" id="confirmpassword" placeholder="">
+				</div>
+			  </div>
+			  
+			  <p>By creating an account, you agree that we are allowed to contact you via email if needed</p>
+			  <button type="submit" class="btn btn-info">Create Account</button>
+			</form>
+		</div>
 		
+		<!-- footer -->
 		<footer id="footer-straight" class="mt-5 py-3">
 			<div class="container">
 				<p class="border-bottom">Courtesy of The Executives 2019/2020 Academic Session</p>
@@ -121,7 +124,6 @@
 				<span>Website Crafted By Kehinde Yishawu</span>
 			</div>
 		</footer>
-		
 	</div>
 
     <!-- <script src="./public/js/main.js"></script> -->
