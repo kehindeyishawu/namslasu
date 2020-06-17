@@ -1,6 +1,7 @@
 const express = require("express"),
 	  router = express.Router(),
-	  {fresher, sop, senior, junior} = require("../models/model.js");
+	  passport = require("passport"),
+	  {fresher, sop, senior, junior, User} = require("../models/model.js");
 
 
 router.get("/template", (req, res)=>{
@@ -63,12 +64,23 @@ router.get("/senior", (req, res)=>{
 	
 })
 
+
+// login form
 router.get("/login", (req, res)=>{
 	res.render("login")
 })
+// login logic
 
+// **********************
+
+// signup form
 router.get("/signup", (req, res)=>{
 	res.render("usernew")
 })
+// signup logic
+router.post("/signup", (req, res)=>{
+	res.render("template")
+})
+
 
 module.exports = router;
