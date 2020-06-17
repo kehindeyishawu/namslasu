@@ -13,11 +13,11 @@ const courseSchema = new mongoose.Schema({
 
 // userSchema
 const UserSchema = new mongoose.Schema({
-    firstName: String,
-	lastName: String,
-	email: String,
-	matricNo: String,
-	phoneNo: String,
+    username: String,
+	firstname: String,
+	lastname: String,
+	matric: String,
+	phone: String,
     password: String,
     status: {type: String, default: "student"},
 	dateCreated: {type: Date, default: Date.now}

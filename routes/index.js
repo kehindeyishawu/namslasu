@@ -79,7 +79,18 @@ router.get("/signup", (req, res)=>{
 })
 // signup logic
 router.post("/signup", (req, res)=>{
-	res.render("template")
+	const newUser = new User({username: req.body.username});
+    
+    User.register(newUser, req.body.password, function(err, user){
+        if(err){
+            console.log(err);
+            return res.render("/", {error: err.message});
+        }
+        passport.authenticate("local")(req, res, function(){
+           req.flash("success", "Successfully Signed Up! Nice to meet you " + req.body.username);
+           res.redirect("/template"); 
+        });
+    });
 })
 
 
