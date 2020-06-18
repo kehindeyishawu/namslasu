@@ -16,7 +16,7 @@ const UserSchema = new mongoose.Schema({
     username: String,
 	firstname: String,
 	lastname: String,
-	matric: String,
+	matric: {type: String, unique: true, required: true},
 	phone: String,
     password: String,
     status: {type: String, default: "student"},

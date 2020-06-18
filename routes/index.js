@@ -84,17 +84,25 @@ router.post("/signup", (req, res)=>{
 	newUser.lastname = req.body.lastname;
 	newUser.matric = req.body.matric;
 	newUser.phone = req.body.phone;
-    User.register(newUser, req.body.password, function(err, user){
+    User.register(newUser, req.body.password, (err, user)=>{
         if(err){
             console.log(err);
-            return res.render("/template", {error: err.message});
+            return res.render("template", {error: err.message});
         }
+		
         passport.authenticate("local")(req, res, function(){
-           req.flash("success", "Successfully Signed Up! Nice to meet you " + req.body.username);
+           req.flash("success", "Account Successfully Created! Nice to meet you " + req.body.firstname);
            res.redirect("/template"); 
         });
     });
 })
+
+// logout logic
+router.get("/logout", (req, res) => {
+    req.logout();
+    req.flash("success", "Successfully Signed Out! See You Later");
+    res.redirect("/template");
+});
 
 
 module.exports = router;
