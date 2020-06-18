@@ -42,9 +42,22 @@
                             <li class="nav-item">
                                 <a href="#" class="nav-link">Executives</a>
                             </li>
-                            <li class="nav-item">
-                                <a href="/login" class="nav-link">Login</a>
-                            </li>
+							<% if(currentUser){ %>
+								<li class="nav-item dropdown">
+									<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									  <i class="fas fa-user"></i> <%= currentUser.firstname%>
+									</a>
+									<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+									  <a class="dropdown-item" href="/profile">Profile</a>
+									  <a class="dropdown-item" href="/logout">Logout</a>
+									</div>
+								 </li>
+							<% }else{ %>
+								<li class="nav-item">
+                                	<a href="/login" class="nav-link">Login</a>
+                            	</li>
+							<% } %>
+                            
                             <li class="nav-item">
                                 <a href="#" class="nav-link">Lecturers</a>
                             </li>
