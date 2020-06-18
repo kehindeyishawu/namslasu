@@ -65,6 +65,11 @@ router.get("/senior", (req, res)=>{
 	
 })
 
+// profile route
+router.get("/profile", middle.isLoggedIn, (req, res)=>{
+	res.render("profile/index")
+})
+
 
 // login form
 router.get("/login", (req, res)=>{
