@@ -8,6 +8,7 @@ const express = require("express"),
 	  passportLocalMongoose = require("passport-local-mongoose"),
 	  flash = require("connect-flash"),
 	  session = require("express-session"),
+	  middle = require("./middleware/middle.js"),
 	  methodOverride = require("method-override");
 
 // Database config

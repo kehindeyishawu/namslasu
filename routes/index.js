@@ -1,7 +1,8 @@
 const express = require("express"),
 	  router = express.Router(),
 	  passport = require("passport"),
-	  {fresher, sop, senior, junior, User} = require("../models/model.js");
+	  {fresher, sop, senior, junior, User} = require("../models/model.js"),
+	  middle = require("../middleware/middle.js");
 
 
 router.get("/template", (req, res)=>{
@@ -70,7 +71,14 @@ router.get("/login", (req, res)=>{
 	res.render("login")
 })
 // login logic
-
+router.post("/login", passport.authenticate("local", 
+{
+    successRedirect: "/",
+    failureRedirect: "/login",
+    failureFlash: true,
+    successFlash: `Welcome Back`
+}), (req, res) => {
+});
 // **********************
 
 // signup form
@@ -78,7 +86,7 @@ router.get("/signup", (req, res)=>{
 	res.render("usernew")
 })
 // signup logic
-router.post("/signup", (req, res)=>{
+router.post("/signup", middle.verifyMatric, (req, res)=>{
 	const newUser = new User({username: req.body.username});
     newUser.firstname = req.body.firstname;
 	newUser.lastname = req.body.lastname;
@@ -92,7 +100,7 @@ router.post("/signup", (req, res)=>{
 		
         passport.authenticate("local")(req, res, function(){
            req.flash("success", "Account Successfully Created! Nice to meet you " + req.body.firstname);
-           res.redirect("/template"); 
+           res.redirect("/"); 
         });
     });
 })
@@ -101,7 +109,7 @@ router.post("/signup", (req, res)=>{
 router.get("/logout", (req, res) => {
     req.logout();
     req.flash("success", "Successfully Signed Out! See You Later");
-    res.redirect("/template");
+    res.redirect("/");
 });
 
 
