@@ -95,7 +95,7 @@ router.post("/signup", middle.verifyMatric, (req, res)=>{
     User.register(newUser, req.body.password, (err, user)=>{
         if(err){
             console.log(err);
-            return res.render("template", {error: err.message});
+            return res.render("usernew", {error: err.message});
         }
 		
         passport.authenticate("local")(req, res, function(){

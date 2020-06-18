@@ -39,9 +39,21 @@
                             <li class="nav-item">
                                 <a href="#" class="nav-link">Executives</a>
                             </li>
-                            <li class="nav-item">
-                                <a href="/login" class="nav-link">Login</a>
-                            </li>
+                            <% if(currentUser){ %>
+								<li class="nav-item dropdown">
+									<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									  <i class="fas fa-user"></i> <%= currentUser.firstname%>
+									</a>
+									<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+									  <a class="dropdown-item" href="/profile">Profile</a>
+									  <a class="dropdown-item" href="/logout">Logout</a>
+									</div>
+								 </li>
+							<% }else{ %>
+								<li class="nav-item">
+                                	<a href="/login" class="nav-link">Login</a>
+                            	</li>
+							<% } %>
                             <li class="nav-item">
                                 <a href="#" class="nav-link">Lecturers</a>
                             </li>
@@ -104,7 +116,14 @@
 					Comment
 				</h2>
 				<form class="form-group">
-					<textarea placeholder="Not functional yet" class="form-control" rows="6"></textarea>
+					<textarea 
+							  <% if(currentUser){ %>
+								  placeholder="Hey <%= currentUser.firstname %> what do you think about these courses, we would really like to get a feedback from you!! Drop a comment here.  Not functional yet"
+							  <% }else{ %>
+								  placeholder="Not functional yet"
+							  <% } %>
+							  
+					class="form-control" rows="6"></textarea>
 				</form>
 				<button class="btn btn-info rounded-pill">
 					Post Comment
