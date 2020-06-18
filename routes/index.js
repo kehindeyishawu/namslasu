@@ -80,7 +80,10 @@ router.get("/signup", (req, res)=>{
 // signup logic
 router.post("/signup", (req, res)=>{
 	const newUser = new User({username: req.body.username});
-    
+    newUser.firstname = req.body.firstname;
+	newUser.lastname = req.body.lastname;
+	newUser.matric = req.body.matric;
+	newUser.phone = req.body.phone;
     User.register(newUser, req.body.password, function(err, user){
         if(err){
             console.log(err);
