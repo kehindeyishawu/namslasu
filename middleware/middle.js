@@ -16,11 +16,11 @@ const middleware = {
 				
 				
 				let mat = req.body.matric;
-			    let micro = mat.slice(3,6)
+			    let micro = mat.slice(2,6)
 			    let check = Number(req.body.matric);
 			
 				if ( check && mat.length === 9 ){
-					if(micro === "561" ){
+					if(micro === "0561" ){
 						next()
 					}else{
 						res.render("usernew", {error: "Only microbiology students can create account"})
