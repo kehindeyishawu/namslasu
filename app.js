@@ -23,6 +23,7 @@ mongoose.connect("mongodb+srv://nams:executivepass@cluster0-wog0h.mongodb.net/we
 })
 
 // configuring packages
+require("dotenv").config()
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
