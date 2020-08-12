@@ -11,8 +11,11 @@ const express = require("express"),
 	  middle = require("./middleware/middle.js"),
 	  methodOverride = require("method-override");
 
-// Database config
-mongoose.connect("mongodb+srv://nams:executivepass@cluster0-wog0h.mongodb.net/web?retryWrites=true&w=majority", {
+
+// Database and dotenv config
+require("dotenv").config()
+
+mongoose.connect(process.env.DATABASE_LINK, {
 	useNewUrlParser: true,
 	useCreateIndex: true,
 	useUnifiedTopology: true
@@ -23,7 +26,6 @@ mongoose.connect("mongodb+srv://nams:executivepass@cluster0-wog0h.mongodb.net/we
 })
 
 // configuring packages
-require("dotenv").config()
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
@@ -95,6 +97,7 @@ app.use(function(req, res, next){
 // requiring and using routes
 const routes = require("./routes/index.js");
 app.use(routes)
+
 
 // sever setup
 app.listen(process.env.PORT || 3000, (req, res)=>{

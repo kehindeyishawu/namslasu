@@ -5,6 +5,10 @@ html body{
     color: #222;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 .highlight{
     color: #686f7a
 }
