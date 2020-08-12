@@ -13,7 +13,7 @@ const express = require("express"),
 
 
 // Database and dotenv config
-require("dotenv").config()
+// require("dotenv").config()
 
 mongoose.connect(process.env.DATABASE_LINK, {
 	useNewUrlParser: true,
