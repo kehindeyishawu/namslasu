@@ -35,6 +35,11 @@ const model = {
 	User: mongoose.model("User", UserSchema)
 }
 
-
+// model.senior.create({
+// 	code: "MIC 413",
+// 	title: "Principles of Epidemiology and Public Health",
+// 	urlOne: "https://drive.google.com/drive/folders/11VUl9gTbyfmmV7pmsjmAHzUDyggfnAF0?usp=drive_link",
+// 	urlTwo: "https://drive.google.com/drive/folders/13ViA7AbqB3AJN78UToAb67anqYuLcbEs?usp=drive_link"
+// }).then((course)=>{console.log(`Course Created \n ${course}`)}).catch((err)=>{console.log("error" +"\n" + err.message)})
 
 module.exports = model
